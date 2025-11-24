@@ -67,6 +67,15 @@ INFO - Bot is running. Press Ctrl+C to stop.
 4. Copy the token provided by BotFather
 5. Paste it in your `.env` file
 
+## Current Bot Configuration
+
+This project already has a registered Telegram bot:
+
+- **Bot Username**: [@pegasus_profil_bot](https://t.me/pegasus_profil_bot)
+- **Bot Token**: `8573088419:AAEWZCeDvY9srasrAXprVOPDzinPJWxjGVI`
+
+⚠️ **Security Note**: This token is already configured in the `.env` file. If you need to create a new bot or regenerate the token, follow the steps above and update the `.env` file accordingly.
+
 ## Testing the Bot
 
 ### Run Unit Tests
