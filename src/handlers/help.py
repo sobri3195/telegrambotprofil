@@ -3,75 +3,69 @@ Help command handler.
 """
 from telegram import Update
 from telegram.ext import ContextTypes
+from ..utils.user_manager import user_manager
 
 
 async def help_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Handle /help command."""
-    help_message = """
-📚 **Panduan Lengkap Data Breach Analyzer Bot**
+    user_id = update.effective_user.id
+    credits = user_manager.get_credits(user_id)
+    
+    help_message = f"""📚 *Help - Data Breach Search Bot*
 
-**🎯 Apa yang Bisa Dianalisis?**
+*Your Credits:* {credits}
 
-Bot ini dapat mengekstrak dan menganalisis:
+*🔍 How to Search:*
 
-1. **Data Pribadi**
-   • Nama lengkap
-   • Email address
-   • Nomor telepon
-   • Tanggal lahir
-   • Alamat fisik
+Just send me any query directly - no commands needed!
 
-2. **Data Keamanan**
-   • Password hash (MD5, SHA-1, SHA-256, bcrypt, Argon2)
-   • Assessment kualitas password storage
-   • Identifikasi kelemahan keamanan
+*📧 Email Search:*
+• `example@gmail.com` - full email
+• `example@` - search by name part
+• `@gmail.com` - search by domain
 
-3. **Data Sensitif**
-   • Nomor passport
-   • ID Telegram
-   • Channel Telegram
-   • Informasi identitas lainnya
+*📱 Phone Search:*
+• `+79024196473` - with country code
+• `79024196473` - local format
 
-4. **Analisis Lanjutan**
-   • Konsistensi data cross-reference
-   • Pola perilaku pengguna
-   • Profiling berdasarkan aktivitas
-   • Deteksi anomali
+*🚗 Vehicle Search:*
+• `O999МУ777` - license plate
+• `XTA21150053965897` - VIN number
 
-**📥 Format Input yang Didukung:**
+*📍 IP Address:*
+• `127.0.0.1` - IPv4 address
 
-• PDF Document (.pdf)
-• Text File (.txt)
-• Teks mentah (copy-paste)
+*👤 Name Search:*
+• `Muhammad Sobri Maulana` - full name
+• `John Doe` - any name
 
-**🔒 Keamanan & Privasi:**
+*🔀 Combo Search:*
+Combine name with other identifiers:
+• `Sergio 79024196473`
+• `Ivan Kuznetsov 09/18/1991`
+• `example@gmail.com 889Kkt`
 
-✅ Semua data di-mask dalam laporan
-✅ Tidak ada penyimpanan data permanen
-✅ Proses dilakukan di memory
-✅ Logs hanya menyimpan metadata
+*🧠 Multi Query:*
+Send multiple queries, one per line:
+```
+Muhammad Sobri Maulana
+example@gmail.com
++79024196473
+```
 
-**📊 Contoh Output:**
+*💳 Credits:*
+• Each search costs 1 credit
+• You started with 51 free credits
+• Contact admin to top up
 
-Laporan mencakup:
-• Status risiko (HIGH/MEDIUM/LOW)
-• Data pribadi (masked)
-• Sumber data breach
-• Temuan kritis
-• Rekomendasi tindakan
+*📊 Results Include:*
+• Platforms where data was found
+• Number of data points per platform
+• Total summary statistics
 
-**⚡ Cara Cepat:**
+*Need to start over?* Use /start
 
-1. `/analyze` - Mulai analisis
-2. Upload file atau paste text
-3. Tunggu beberapa detik
-4. Dapatkan laporan lengkap!
-
-**❓ Butuh Bantuan?**
-
-Jika ada pertanyaan atau masalah, hubungi administrator bot.
-
-Ketik `/analyze` untuk memulai analisis sekarang!
+*Have questions?* Contact our support team.
 """
     
     await update.message.reply_text(

@@ -1,32 +1,40 @@
-# 🛡️ Telegram Data Breach Analyzer Bot
+# 🔍 Telegram Data Breach Search Bot
 
-Bot Telegram canggih untuk menganalisis dokumen pelanggaran data (data breach) dan profiling pengguna dengan kemampuan ekstraksi data otomatis, analisis risiko, dan pelaporan terstruktur.
+Bot Telegram untuk mencari informasi data breach di berbagai platform dengan sistem kredit dan pencarian multi-query.
 
 ## 🎯 Fitur Utama
 
-### 1. Ekstraksi Data Otomatis
-- **Input Multiformat**: PDF, TXT, atau teks mentah
-- **Parsing Cerdas**:
-  - Nama Lengkap
-  - Email (validasi regex)
-  - Nomor Telepon (format internasional)
-  - Alamat (dengan geolokasi)
-  - Tanggal Lahir (multi-format)
-  - Password Hash (MD5, bcrypt, SHA-256, Argon2)
-  - Data Sensitif (Passport, ID Telegram, Channel)
+### 1. Sistem Kredit
+- **51 Kredit Gratis** saat pertama kali menggunakan bot
+- Setiap pencarian menggunakan 1 kredit
+- Tracking kredit real-time per user
 
-### 2. Analisis Mendalam
-- **Konsistensi Data**: Cross-reference data dari berbagai sumber
-- **Assessment Risiko**: 
-  - Password storage security
-  - Eksposur data sensitif
-  - Pola perilaku anomali
-- **Geolokasi**: Deteksi inkonsistensi lokasi
+### 2. Jenis Pencarian
+- **Email**: Pencarian lengkap, nama saja, atau domain saja
+  - `example@gmail.com` - email lengkap
+  - `example@` - nama saja
+  - `@gmail.com` - domain saja
+- **Nomor Telepon**: Format internasional atau lokal
+  - `+79024196473` - dengan kode negara
+  - `79024196473` - format lokal
+- **Kendaraan**: Plat nomor atau VIN
+  - `O999МУ777` - plat nomor
+  - `XTA21150053965897` - nomor VIN
+- **IP Address**: IPv4
+  - `127.0.0.1`
+- **Nama**: Pencarian berdasarkan nama
+  - `Muhammad Sobri Maulana`
+- **Combo Search**: Kombinasi nama dengan identifier lain
+  - `Sergio 79024196473`
+  - `Ivan Kuznetsov 09/18/1991`
+  - `example@gmail.com 889Kkt`
+- **Multi Query**: Beberapa pencarian sekaligus (satu query per baris)
 
-### 3. Pelaporan Terstruktur
-- Format Markdown yang mudah dibaca
-- Data masking untuk privasi
-- Rekomendasi tindakan keamanan
+### 3. Hasil Pencarian
+- Menampilkan platform yang memiliki data
+- Jumlah data points per platform
+- Ringkasan total platform dan data points
+- Kredit yang digunakan dan sisa kredit
 
 ## 🚀 Instalasi
 
@@ -50,8 +58,10 @@ Buat file `.env` dengan konfigurasi berikut:
 ```env
 TELEGRAM_BOT_TOKEN=your_telegram_bot_token_here
 LOG_LEVEL=INFO
-MAX_FILE_SIZE=20971520  # 20MB
-ALLOWED_EXTENSIONS=pdf,txt
+WEBSITE_URL=https://scanyour.name
+INITIAL_CREDITS=51
+CREDIT_COST_PER_SEARCH=1
+MAX_MULTI_QUERY=10
 ```
 
 ## 📖 Penggunaan
@@ -64,16 +74,18 @@ python bot.py
 
 ### Perintah Bot
 
-- `/start` - Memulai bot dan menampilkan panduan
-- `/help` - Menampilkan bantuan
-- `/analyze` - Menganalisis dokumen atau teks
-- `/status` - Melihat status analisis
+- `/start` - Mulai bot dan dapatkan 51 kredit gratis
+- `/help` - Panduan lengkap penggunaan
 
-### Cara Menganalisis Data
+### Cara Melakukan Pencarian
 
-1. Kirim perintah `/analyze`
-2. Upload dokumen (PDF/TXT) atau kirim teks mentah
-3. Bot akan memproses dan menghasilkan laporan lengkap
+1. Kirim `/start` untuk mendapatkan kredit gratis
+2. Kirim query pencarian langsung (tidak perlu command):
+   - Email: `example@gmail.com`
+   - Phone: `+79024196473`
+   - Name: `Muhammad Sobri Maulana`
+   - Multi-query: Kirim beberapa query, masing-masing di baris baru
+3. Bot akan mencari di database dan menampilkan hasil
 
 ## 🏗️ Struktur Project
 
@@ -88,38 +100,29 @@ python bot.py
 │   ├── __init__.py
 │   ├── handlers/         # Telegram bot handlers
 │   │   ├── __init__.py
-│   │   ├── start.py
-│   │   ├── analyze.py
-│   │   └── help.py
-│   ├── parsers/          # Data extraction parsers
+│   │   ├── start.py      # /start command
+│   │   ├── help.py       # /help command
+│   │   └── search.py     # Search query handler
+│   ├── parsers/          # Query parsing
 │   │   ├── __init__.py
-│   │   ├── document_parser.py
-│   │   ├── data_extractor.py
-│   │   └── patterns.py
-│   ├── analyzers/        # Data analysis modules
+│   │   ├── search_parser.py  # Parse search queries
+│   │   └── ...           # Legacy parsers
+│   ├── search/           # Search engine
 │   │   ├── __init__.py
-│   │   ├── risk_assessor.py
-│   │   ├── consistency_checker.py
-│   │   └── behavior_analyzer.py
-│   ├── reporters/        # Report generation
-│   │   ├── __init__.py
-│   │   ├── report_generator.py
-│   │   └── data_masker.py
+│   │   ├── search_engine.py    # Simulate searches
+│   │   └── results_formatter.py # Format results
 │   └── utils/            # Utility functions
 │       ├── __init__.py
+│       ├── user_manager.py  # Credit management
 │       ├── validators.py
 │       └── helpers.py
 └── tests/                # Unit tests
-    ├── __init__.py
-    ├── test_parsers.py
-    ├── test_analyzers.py
-    └── test_reporters.py
 ```
 
 ## 🔒 Keamanan & Privasi
 
-- **Data Masking**: Semua PII (Personally Identifiable Information) di-mask dalam laporan
-- **Temporary Storage**: Data diproses di memory, tidak disimpan permanen
+- **In-Memory Storage**: Data pengguna disimpan di memory (tidak persisten)
+- **No Data Collection**: Bot tidak menyimpan hasil pencarian
 - **Logging**: Hanya metadata yang di-log, bukan data sensitif
 
 ## 🧪 Testing
@@ -145,4 +148,10 @@ Pull requests are welcome! Untuk perubahan besar, silakan buka issue terlebih da
 
 ## ⚠️ Disclaimer
 
-Bot ini dibuat untuk tujuan edukasi dan penelitian keamanan. Penggunaan untuk tujuan ilegal adalah tanggung jawab pengguna.
+Bot ini dibuat untuk tujuan edukasi dan demonstrasi. Hasil pencarian adalah simulasi dan tidak mengakses database breach yang sebenarnya. Penggunaan untuk tujuan ilegal adalah tanggung jawab pengguna.
+
+## 📋 Catatan
+
+- Hasil pencarian disimulasikan (tidak mengakses database breach yang sebenarnya)
+- Platform dan jumlah data yang ditampilkan bersifat random untuk demonstrasi
+- Kredit pengguna disimpan di memory dan akan reset saat bot di-restart

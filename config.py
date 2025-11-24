@@ -1,5 +1,5 @@
 """
-Configuration module for the Telegram Data Breach Analyzer Bot.
+Configuration module for the Telegram Data Breach Search Bot.
 """
 import os
 from typing import List
@@ -11,15 +11,10 @@ class Settings(BaseSettings):
     
     telegram_bot_token: str
     log_level: str = "INFO"
-    max_file_size: int = 20971520  # 20MB
-    allowed_extensions: str = "pdf,txt"
-    high_risk_threshold: int = 7
-    medium_risk_threshold: int = 4
-    
-    @property
-    def allowed_extensions_list(self) -> List[str]:
-        """Get allowed extensions as a list."""
-        return [ext.strip() for ext in self.allowed_extensions.split(',')]
+    website_url: str = "https://scanyour.name"
+    initial_credits: int = 51
+    credit_cost_per_search: int = 1
+    max_multi_query: int = 10
     
     class Config:
         env_file = ".env"
