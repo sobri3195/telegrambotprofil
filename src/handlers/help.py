@@ -63,9 +63,35 @@ example@gmail.com
 • Number of data points per platform
 • Total summary statistics
 
-*Need to start over?* Use /start
+*💡 Other Commands:*
+• /start - Start over
+• /author - View author and donation information
 
-*Have questions?* Contact our support team.
+━━━━━━━━━━━━━━━━━━━━
+👨‍💻 *Author Information*
+━━━━━━━━━━━━━━━━━━━━
+
+*Lettu Kes dr. Muhammad Sobri Maulana, S.Kom, CEH, OSCP, OSCE*
+
+📧 Email: muhammadsobrimaulana31@gmail.com
+💻 GitHub: github.com/sobri3195
+
+*🌐 Social Media:*
+• YouTube: youtube.com/@muhammadsobrimaulana6013
+• Telegram: t.me/winlin_exploit
+• TikTok: tiktok.com/@dr.sobri
+• Website: muhammadsobrimaulana.netlify.app
+
+*💰 Support & Donations:*
+• Lynk.id: lynk.id/muhsobrimaulana
+• Trakteer: trakteer.id/g9mkave5gauns962u07t
+• Gumroad: maulanasobri.gumroad.com
+• KaryaKarsa: karyakarsa.com/muhammadsobrimaulana
+• Nyawer: nyawer.co/MuhammadSobriMaulana
+• Portfolio: muhammad-sobri-maulana-kvr6a.sevalla.page
+
+*💬 WhatsApp Group:*
+chat.whatsapp.com/B8nwRZOBMo64GjTwdXV8Bl
 """
     
     await update.message.reply_text(

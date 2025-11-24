@@ -16,6 +16,7 @@ from src.handlers import (
     start_handler,
     help_handler,
     search_handler,
+    author_handler,
 )
 
 logging.basicConfig(
@@ -40,6 +41,7 @@ def main() -> None:
     
     application.add_handler(CommandHandler("start", start_handler))
     application.add_handler(CommandHandler("help", help_handler))
+    application.add_handler(CommandHandler("author", author_handler))
     
     application.add_handler(
         MessageHandler(filters.TEXT & ~filters.COMMAND, search_handler)
