@@ -76,6 +76,7 @@ python bot.py
 
 - `/start` - Mulai bot dan dapatkan 51 kredit gratis
 - `/help` - Panduan lengkap penggunaan
+- `/author` - Informasi lengkap tentang developer dan link donasi
 
 ### Cara Melakukan Pencarian
 
@@ -102,6 +103,7 @@ python bot.py
 │   │   ├── __init__.py
 │   │   ├── start.py      # /start command
 │   │   ├── help.py       # /help command
+│   │   ├── author.py     # /author command
 │   │   └── search.py     # Search query handler
 │   ├── parsers/          # Query parsing
 │   │   ├── __init__.py
