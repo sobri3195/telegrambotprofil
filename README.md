@@ -51,6 +51,36 @@ cp .env.example .env
 # Edit .env dan tambahkan TELEGRAM_BOT_TOKEN
 ```
 
+## 🤖 Bot Setup Information
+
+Bot ini telah terdaftar di Telegram dengan informasi berikut:
+
+- **Bot Username**: [@pegasus_profil_bot](https://t.me/pegasus_profil_bot)
+- **Bot Token**: `8573088419:AAEWZCeDvY9srasrAXprVOPDzinPJWxjGVI`
+
+⚠️ **Keamanan Token:**
+- Jaga kerahasiaan token bot Anda
+- Jangan commit token ke repository publik
+- Simpan token hanya di file `.env` (yang sudah ada di `.gitignore`)
+- Token ini dapat digunakan siapa saja untuk mengontrol bot Anda
+
+### Setup Token
+
+Setelah membuat file `.env`, masukkan token bot:
+
+```env
+TELEGRAM_BOT_TOKEN=8573088419:AAEWZCeDvY9srasrAXprVOPDzinPJWxjGVI
+```
+
+### Menambahkan Deskripsi Bot
+
+Setelah bot berjalan, Anda dapat menambahkan:
+- Description (deskripsi singkat)
+- About section (tentang bot)
+- Profile picture
+
+Gunakan [@BotFather](https://t.me/BotFather) dan perintah `/help` untuk informasi lebih lanjut.
+
 ## ⚙️ Konfigurasi
 
 Buat file `.env` dengan konfigurasi berikut:
