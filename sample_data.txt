@@ -1,0 +1,60 @@
+DATA BREACH SAMPLE - FOR TESTING ONLY
+
+=== Personal Information ===
+FullName: Maulana Muhammad Sobri
+Email: maulana.sobri@example.com
+Alternative Email: m.sobri@company.com
+Phone: +62-812-3456-7890
+Phone (Office): +62-21-1234567
+Date of Birth: 1990-05-15
+Address: Jalan Sudirman No. 123
+City: Jakarta
+Region: DKI Jakarta
+PostCode: 12345
+
+=== Security Information ===
+Password Hash (MD5): 5f4dcc3b5aa765d61d8327deb882cf99
+Password Hash (bcrypt): $2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy
+Password Hash (SHA-256): 5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8
+
+=== Sensitive Data ===
+Passport: A82345670001
+ID Number: 3201234567890123
+Telegram: @maulana_sobri
+
+=== Data Sources ===
+Source: Bhinneka E-commerce Database Breach (2023)
+- Email: maulana.sobri@example.com
+- Phone: +62-812-3456-7890
+- Password: bcrypt hash (secured)
+
+Source: Civil Registry Leak (2022)
+- Full Name: Maulana Muhammad Sobri
+- Passport: A82345670001
+- Address: Jakarta, Indonesia
+
+Source: Telegram User Data
+- Username: @maulana_sobri
+- Channels: https://t.me/pythonindo
+- Channels: https://t.me/kalilinux_tutorial
+- Channels: https://t.me/cybersecurity_news
+- Channels: https://t.me/developer_tools
+- Channels: https://t.me/tech_startup_indonesia
+
+Source: SlideTeam Data Breach (2021)
+- Email: m.sobri@company.com
+- Password: 5f4dcc3b5aa765d61d8327deb882cf99 (MD5 - WEAK)
+
+=== Additional Information ===
+Location: Ternate, North Maluku (Home)
+Work Location: Jakarta, Indonesia
+Education: University of Indonesia
+Profession: Software Engineer
+Interests: Technology, Cybersecurity, Programming, Hacking
+
+=== Notes ===
+Multiple phone numbers detected - possible inconsistency
+Address mismatch: Ternate (home) vs Jakarta (work)
+High-risk password storage in SlideTeam breach (MD5)
+Telegram activity indicates strong technical interest
+Following 40+ tech/security related channels
