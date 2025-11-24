@@ -146,6 +146,32 @@ MIT License
 
 Pull requests are welcome! Untuk perubahan besar, silakan buka issue terlebih dahulu.
 
+## 👨‍💻 Author
+
+**Lettu Kes dr. Muhammad Sobri Maulana, S.Kom, CEH, OSCP, OSCE**
+
+- 🌐 GitHub: [github.com/sobri3195](https://github.com/sobri3195)
+- 📧 Email: [muhammadsobrimaulana31@gmail.com](mailto:muhammadsobrimaulana31@gmail.com)
+- 🌍 Website: [muhammadsobrimaulana.netlify.app](https://muhammadsobrimaulana.netlify.app)
+- 🚀 Portfolio: [muhammad-sobri-maulana-kvr6a.sevalla.page](https://muhammad-sobri-maulana-kvr6a.sevalla.page/)
+
+### 🔗 Social Media
+
+- 📺 YouTube: [@muhammadsobrimaulana6013](https://www.youtube.com/@muhammadsobrimaulana6013)
+- 💬 Telegram: [winlin_exploit](https://t.me/winlin_exploit)
+- 🎵 TikTok: [@dr.sobri](https://www.tiktok.com/@dr.sobri)
+- 👥 WhatsApp Group: [Join Group](https://chat.whatsapp.com/B8nwRZOBMo64GjTwdXV8Bl)
+
+### 💖 Support & Donation
+
+Jika project ini bermanfaat, Anda dapat memberikan dukungan melalui:
+
+- ☕ [Trakteer](https://trakteer.id/g9mkave5gauns962u07t)
+- 💳 [Lynk.id](https://lynk.id/muhsobrimaulana)
+- 🛍️ [Gumroad](https://maulanasobri.gumroad.com/)
+- 🎨 [Karya Karsa](https://karyakarsa.com/muhammadsobrimaulana)
+- 💰 [Nyawer](https://nyawer.co/MuhammadSobriMaulana)
+
 ## ⚠️ Disclaimer
 
 Bot ini dibuat untuk tujuan edukasi dan demonstrasi. Hasil pencarian adalah simulasi dan tidak mengakses database breach yang sebenarnya. Penggunaan untuk tujuan ilegal adalah tanggung jawab pengguna.
